@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactLocation } from "@/components/ContactLocation";
+import { HomeGive } from "@/components/HomeGive";
 import { HomeHero } from "@/components/HomeHero";
 import { Card } from "@/components/Section";
 import { useLang } from "@/lib/i18n";
@@ -32,9 +33,9 @@ function Home() {
     <>
       <HomeHero />
 
-      <main className="mx-auto max-w-[1100px] px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div>
+      <main className="mx-auto w-full max-w-[1100px] min-w-0 px-4 py-14 sm:px-6">
+        <div className="grid min-w-0 gap-10 md:grid-cols-2">
+          <div className="min-w-0">
             <h2 className="text-3xl">{t("home.welcome.h")}</h2>
             <hr className="rule-gold my-4" />
             <p className="mb-6 text-muted-foreground">{t("home.welcome.p")}</p>
@@ -55,7 +56,7 @@ function Home() {
               <p>{t("home.new.p")}</p>
             </Card>
           </div>
-          <div className="md:pt-24">
+          <div className="min-w-0 md:pt-24">
             <Card accent="ruby">
               <h3 className="text-xl">{t("home.thissun.h")}</h3>
               <p>{t("home.thissun.p")}</p>
@@ -74,6 +75,7 @@ function Home() {
           </cite>
         </blockquote>
       </main>
+      <HomeGive />
       <ContactLocation />
     </>
   );

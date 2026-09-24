@@ -36,12 +36,12 @@ function Events() {
       {data?.length === 0 ? <p className="text-muted-foreground">{t("events.empty")}</p> : null}
       <div className="divide-y divide-border border-y border-border">
         {data?.map((e) => (
-          <article key={e.id} className="flex gap-6 py-6">
+          <article key={e.id} className="grid min-w-0 grid-cols-[4rem_minmax(0,1fr)] gap-4 py-6 sm:gap-6">
             <div className="w-16 shrink-0 border-r border-border pr-4 text-center">
               <div className="display text-3xl leading-none text-wood-dark">{e.day_label}</div>
               <div className="text-xs tracking-widest text-muted-foreground">{e.month_label}</div>
             </div>
-            <div>
+            <div className="min-w-0">
               <h2 className="text-2xl">{pick(e.title_en, e.title_am)}</h2>
               <p className="mt-1">{pick(e.description_en, e.description_am)}</p>
               <p className="mt-2 text-sm tracking-wide text-muted-foreground">{pick(e.meta_en, e.meta_am)}</p>

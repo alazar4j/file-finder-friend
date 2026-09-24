@@ -41,8 +41,8 @@ function Sermons() {
       <div className="border-y border-border">
         {data?.map((s) => (
           <article key={s.id} className="border-b border-border last:border-b-0">
-            <div className="flex items-center justify-between gap-4 py-5">
-              <div>
+            <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-5">
+              <div className="min-w-0">
                 <h2 className="text-2xl">{pick(s.title_en, s.title_am)}</h2>
                 <p className="text-sm text-muted-foreground">
                   {pick(s.speaker_en, s.speaker_am)} · {pick(s.date_en, s.date_am)} ·{" "}

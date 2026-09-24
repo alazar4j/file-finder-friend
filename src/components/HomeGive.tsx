@@ -7,7 +7,7 @@ export function HomeGive() {
   const { t } = useLang();
 
   return (
-    <section id="give" className="bg-secondary px-6 py-14 md:py-20" aria-labelledby="give-heading">
+    <section id="give" className="bg-secondary px-4 py-14 sm:px-6 md:py-20" aria-labelledby="give-heading">
       <div className="mx-auto grid max-w-[1100px] gap-10 md:grid-cols-2 md:items-center">
         <div className="min-w-0">
           <p className="text-sm font-semibold uppercase tracking-wide text-wood">{t("give.h")}</p>
@@ -24,7 +24,7 @@ export function HomeGive() {
           </Button>
         </div>
 
-        <div className="card-ledger border-l-amber">
+        <div className="card-ledger min-w-0 border-l-amber">
           <div className="flex items-center gap-3">
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-amber/20 text-wood-dark">
               <Landmark className="h-5 w-5" aria-hidden="true" />
@@ -32,15 +32,15 @@ export function HomeGive() {
             <h3 className="text-xl">{t("home.give.bank.h")}</h3>
           </div>
           <dl className="mt-4 space-y-3 text-sm">
-            <div className="flex justify-between gap-4">
+            <div className="grid grid-cols-1 gap-1 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-4">
               <dt className="text-muted-foreground">{t("home.give.bank.name")}</dt>
               <dd className="text-right font-medium">{t("home.give.bank.nameV")}</dd>
             </div>
-            <div className="flex justify-between gap-4">
+            <div className="grid grid-cols-1 gap-1 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-4">
               <dt className="text-muted-foreground">{t("home.give.bank.acct")}</dt>
               <dd className="text-right font-medium">{t("home.give.bank.acctV")}</dd>
             </div>
-            <div className="flex justify-between gap-4">
+            <div className="grid grid-cols-1 gap-1 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-4">
               <dt className="text-muted-foreground">{t("home.give.bank.holder")}</dt>
               <dd className="text-right font-medium">{t("brand.name")}</dd>
             </div>
