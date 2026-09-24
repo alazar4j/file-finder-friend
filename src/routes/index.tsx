@@ -47,6 +47,10 @@ function Home() {
               <p>{t("home.wed.p")}</p>
             </Card>
             <Card>
+              <h3 className="text-xl">{t("home.sat.h")}</h3>
+              <p>{t("home.sat.p")}</p>
+            </Card>
+            <Card>
               <h3 className="text-xl">{t("home.new.h")}</h3>
               <p>{t("home.new.p")}</p>
             </Card>
