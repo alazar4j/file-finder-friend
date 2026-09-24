@@ -32,13 +32,18 @@ export const strings: Dict = {
   },
   "home.sunday.h": { en: "Sunday Worship", am: "የእሁድ አምልኮ" },
   "home.sunday.p": {
-    en: "9:00 AM and 11:00 AM — main sanctuary. Children's ministry runs during both services.",
-    am: "ጠዋት 9:00 እና 11:00 — ዋናው ቤተ መቅደስ። የሕፃናት አገልግሎት በሁለቱም ስብሰባዎች ይካሄዳል።",
+    en: "12:00 to 5:30 (Ethiopian Time) — main sanctuary. Children's ministry runs during the service.",
+    am: "ከ12:00 እስከ 5:30 (በኢትዮጵያ ሰዓት) — በዋናው ቤተ መቅደስ። የሕፃናት አገልግሎት ይካሄዳል።",
   },
-  "home.wed.h": { en: "Wednesday Bible Study", am: "የረቡዕ የመጽሐፍ ቅዱስ ጥናት" },
+  "home.wed.h": { en: "Wednesday Prayer Service", am: "የረቡዕ የጸሎት አገልግሎት" },
   "home.wed.p": {
-    en: "7:00 PM in the fellowship hall — open to all ages, no registration needed.",
-    am: "ከቀኑ 7:00 በኅብረት አዳራሽ — ለሁሉም ዕድሜ ክፍት፣ ምዝገባ አያስፈልግም።",
+    en: "10:00 to 2:00 (Ethiopian Time) — open to all ages, no registration needed.",
+    am: "ከ10:00 እስከ 2:00 (በኢትዮጵያ ሰዓት) — ለሁሉም ዕድሜ ክፍት፣ ምዝገባ አያስፈልግም።",
+  },
+  "home.sat.h": { en: "Saturday Youth Service", am: "የቅዳሜ የወጣቶች አገልግሎት" },
+  "home.sat.p": {
+    en: "10:00 to 12:30 (Ethiopian Time) — worship, teaching and community for youth.",
+    am: "ከ10:00 እስከ 12:30 (በኢትዮጵያ ሰዓት) — ለወጣቶች አምልኮ፣ ትምህርትና ኅብረት።",
   },
   "home.new.h": { en: "New Here?", am: "አዲስ ነዎት?" },
   "home.new.p": {
@@ -51,7 +56,7 @@ export const strings: Dict = {
     am: '"ሥር የሰደደ፣ የማይናወጥ" — ፓስተር ጄምስ ኦካፎር በቆላስይስ ላይ ተከታታይ ትምህርቱን ይቀጥላል።',
   },
   "home.address.h": { en: "Address", am: "አድራሻ" },
-  "home.address.p": { en: "Bole Sub-city, Addis Ababa, Ethiopia", am: "ቦሌ ክፍለ ከተማ፣ አዲስ አበባ፣ ኢትዮጵያ" },
+  "home.address.p": { en: "Kotebe Kara, Yeka Sub-city, Addis Ababa, Ethiopia", am: "ቆተቤ ቃራ፣ ያሬክ ክፍለ ከተማ፣ አዲስ አበባ፣ ኢትዮጵያ" },
   "home.contact.h": { en: "Contact", am: "ያግኙን" },
   "home.contact.p": { en: "+251 11 000 0000 · hello@gospelforgeneration.org", am: "+251 11 000 0000 · hello@gospelforgeneration.org" },
   "location.eyebrow": { en: "Come worship with us", am: "ከእኛ ጋር ያምልኩ" },
@@ -164,7 +169,10 @@ export const strings: Dict = {
   "auth.or": { en: "or", am: "ወይም" },
 
   "footer.times.h": { en: "Service Times", am: "የአገልግሎት ሰዓታት" },
-  "footer.times.p": { en: "Sunday — 9:00 AM & 11:00 AM · Wednesday Bible Study — 7:00 PM", am: "እሁድ — ጠዋት 9:00 እና 11:00 · የረቡዕ ጥናት — ከቀኑ 7:00" },
+  "footer.times.p": {
+    en: "Sunday — 12:00 to 5:30 · Wednesday Prayer — 10:00 to 2:00 · Saturday Youth — 10:00 to 12:30 (all times Ethiopian)",
+    am: "እሁድ — ከ12:00 እስከ 5:30 · የረቡዕ ጸሎት — ከ10:00 እስከ 2:00 · የቅዳሜ ወጣቶች — ከ10:00 እስከ 12:30 (ሁሉም በኢትዮጵያ ሰዓት)",
+  },
   "footer.connect.h": { en: "Connect", am: "ይገናኙን" },
   "footer.copyright": {
     en: "© 2026 Gospel for Generation Church. Built with care for the whole family of faith.",
