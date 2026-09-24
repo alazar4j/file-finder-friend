@@ -87,13 +87,29 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
+    min-width: 0;
+    overflow-x: clip;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
     line-height: 1.65;
+  }
+
+  img,
+  iframe,
+  video {
+    max-width: 100%;
+  }
+
+  p,
+  dd,
+  li,
+  a {
+    overflow-wrap: anywhere;
   }
 
   h1,

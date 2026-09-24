@@ -1,12 +1,13 @@
-import { ArrowUpRight, MapPin, Phone, Star } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png.asset.json";
 import { useLang } from "@/lib/i18n";
 
 const DIRECTIONS_URL = "https://maps.app.goo.gl/sDAiezFQyjTDzrf96";
 const PLACE_ID = "ChIJxTimk_-RSxYRDCd9_Il1mH4";
-const PHONE = "+251 11 000 0000";
-const PHONE_HREF = "tel:+251110000000";
+const PHONE = "0939687239";
+const PHONE_HREF = "tel:0939687239";
+const EMAIL = "alazarginbaru1@gmail.com";
 const RATING = "5.0";
 const REVIEWS = "3";
 
@@ -21,11 +22,11 @@ export function ContactLocation() {
   return (
     <section id="contact" className="bg-wood-dark text-parchment-2" aria-labelledby="location-heading">
       {/* Header banner */}
-      <div className="border-b border-parchment-2/15 px-6 py-8">
+      <div className="border-b border-parchment-2/15 px-4 py-8 sm:px-6">
         <div className="mx-auto grid max-w-[1100px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
           <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-wide text-amber">{t("location.eyebrow")}</p>
-            <h2 id="location-heading" className="mt-2 truncate text-2xl text-parchment md:text-4xl">
+            <h2 id="location-heading" className="mt-2 text-2xl leading-tight text-parchment md:text-4xl">
               {t("location.title")}
             </h2>
           </div>
@@ -60,12 +61,12 @@ export function ContactLocation() {
           </a>
         )}
 
-        <div className="px-6 md:absolute md:bottom-6 md:left-1/2 md:w-full md:max-w-[1100px] md:-translate-x-1/2 md:px-6">
+        <div className="px-4 sm:px-6 md:absolute md:bottom-6 md:left-1/2 md:w-full md:max-w-[1100px] md:-translate-x-1/2">
           <a
             href={DIRECTIONS_URL}
             target="_blank"
             rel="noreferrer"
-            className="-mt-10 flex max-w-sm items-center gap-4 border border-border bg-card p-4 shadow-soft transition-transform hover:-translate-y-0.5 md:mt-0"
+            className="-mt-10 flex min-w-0 max-w-sm items-center gap-3 border border-border bg-card p-4 shadow-soft transition-transform hover:-translate-y-0.5 sm:gap-4 md:mt-0"
           >
             <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-amber text-accent-foreground">
               <MapPin className="h-6 w-6" aria-hidden="true" />
@@ -85,21 +86,30 @@ export function ContactLocation() {
       </div>
 
       {/* Details */}
-      <div className="px-6 py-14 md:py-20">
+      <div className="px-4 py-14 sm:px-6 md:py-20">
         <div className="mx-auto max-w-[1100px]">
-          <div className="flex items-center gap-3">
-            <img src={logo.url} alt="" className="h-12 w-12 rounded-full" />
-            <span className="display text-2xl uppercase tracking-[0.2em] text-parchment">{t("contact.wordmark")}</span>
+          <div className="flex min-w-0 items-center gap-3">
+            <img src={logo.url} alt="" className="h-12 w-12 shrink-0 rounded-full" />
+            <span className="display min-w-0 text-2xl uppercase tracking-[0.2em] text-parchment">{t("contact.wordmark")}</span>
           </div>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment-2">{t("location.body")}</p>
           <dl className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div>
+            <div className="min-w-0">
               <dt className="text-sm font-semibold uppercase tracking-wide text-amber">{t("home.address.h")}</dt>
               <dd className="mt-1 text-parchment">{t("home.address.p")}</dd>
             </div>
-            <div>
+            <div className="min-w-0">
               <dt className="text-sm font-semibold uppercase tracking-wide text-amber">{t("home.contact.h")}</dt>
-              <dd className="mt-1 text-parchment">{t("home.contact.p")}</dd>
+              <dd className="mt-2 flex flex-col gap-2 text-parchment">
+                <a className="inline-flex min-w-0 items-center gap-2" href={PHONE_HREF}>
+                  <Phone className="h-4 w-4 shrink-0 text-amber" aria-hidden="true" />
+                  <span>{PHONE}</span>
+                </a>
+                <a className="inline-flex min-w-0 items-center gap-2" href={`mailto:${EMAIL}`}>
+                  <Mail className="h-4 w-4 shrink-0 text-amber" aria-hidden="true" />
+                  <span>{EMAIL}</span>
+                </a>
+              </dd>
             </div>
           </dl>
 

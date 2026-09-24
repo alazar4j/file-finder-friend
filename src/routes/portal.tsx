@@ -119,21 +119,21 @@ function Portal() {
         {t("portal.welcome")} <strong>{form.full_name || user.email}</strong>
       </p>
 
-      <div className="mb-8 grid gap-4 md:grid-cols-3">
+      <div className="mb-8 grid min-w-0 gap-4 md:grid-cols-3">
         {[
           { num: `${total.toLocaleString()} ETB`, lbl: t("portal.giving") },
           { num: String(donations.data?.length ?? 0), lbl: t("portal.groups") },
           { num: String(openPrayers), lbl: t("portal.prayer") },
         ].map((c) => (
-          <div key={c.lbl} className="border-l-[3px] border-amber bg-secondary p-5">
+          <div key={c.lbl} className="min-w-0 border-l-[3px] border-amber bg-secondary p-5">
             <div className="display text-3xl text-wood-dark">{c.num}</div>
             <div className="text-sm text-muted-foreground">{c.lbl}</div>
           </div>
         ))}
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        <div>
+      <div className="grid min-w-0 gap-8 md:grid-cols-2">
+        <div className="min-w-0">
           <Card>
             <h2 className="mb-3 text-2xl">{t("portal.household.h")}</h2>
             {(["full_name", "phone", "address"] as const).map((field) => (
@@ -181,8 +181,8 @@ function Portal() {
                 <li className="text-sm text-muted-foreground">{t("portal.prayer.none")}</li>
               ) : null}
               {prayers.data?.map((p) => (
-                <li key={p.id} className="flex items-start justify-between gap-3 border-t border-border pt-2 text-sm">
-                  <span className={p.status === "answered" ? "text-muted-foreground line-through" : ""}>{p.body}</span>
+                <li key={p.id} className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-3 border-t border-border pt-2 text-sm">
+                  <span className={`min-w-0 ${p.status === "answered" ? "text-muted-foreground line-through" : ""}`}>{p.body}</span>
                   {p.status === "open" ? (
                     <button type="button" onClick={() => closePrayer(p.id)} className="shrink-0 underline">
                       {t("portal.prayer.close")}
@@ -194,7 +194,7 @@ function Portal() {
           </Card>
         </div>
 
-        <div>
+        <div className="min-w-0">
           <Card accent="amber">
             <h2 className="mb-3 text-2xl">{t("portal.history.h")}</h2>
             {donations.data?.length === 0 ? (
@@ -202,8 +202,8 @@ function Portal() {
             ) : (
               <ul className="divide-y divide-border">
                 {donations.data?.map((d) => (
-                  <li key={d.id} className="flex justify-between py-2 text-sm">
-                    <span>
+                  <li key={d.id} className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] gap-3 py-2 text-sm">
+                    <span className="min-w-0">
                       {t(`give.fund.${d.fund}`)} · {new Date(d.created_at).toLocaleDateString()}
                     </span>
                     <span className="font-medium">{Number(d.amount).toLocaleString()} ETB</span>

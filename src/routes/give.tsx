@@ -66,8 +66,8 @@ function Give() {
 
   return (
     <PageSection title={t("give.h")} lede={t("give.p")}>
-      <div className="grid gap-10 md:grid-cols-2">
-        <div className="border border-border bg-card p-6 shadow-soft">
+      <div className="grid min-w-0 gap-10 md:grid-cols-2">
+        <div className="min-w-0 border border-border bg-card p-5 shadow-soft sm:p-6">
           <h2 className="mb-4 text-2xl">{t("give.makeagift")}</h2>
 
           <fieldset className="mb-5 space-y-2">
@@ -135,7 +135,7 @@ function Give() {
           {status ? <p className="mt-3 text-sm text-wood">{status}</p> : null}
         </div>
 
-        <div>
+        <div className="min-w-0">
           <h2 className="mb-3 text-2xl">{t("give.other.h")}</h2>
           <p className="mb-6">{t("give.other.p")}</p>
           <Card accent="amber">

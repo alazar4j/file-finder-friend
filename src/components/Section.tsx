@@ -10,13 +10,13 @@ export function PageSection({
   children: ReactNode;
 }) {
   return (
-    <main className="mx-auto max-w-[1100px] px-6 py-12">
-      <div className="mb-8">
+    <main className="mx-auto w-full max-w-[1100px] min-w-0 px-4 py-12 sm:px-6">
+      <div className="mb-8 min-w-0">
         <h1 className="text-4xl md:text-5xl">{title}</h1>
         <hr className="rule-gold my-4" />
         {lede ? <p className="max-w-2xl text-muted-foreground">{lede}</p> : null}
       </div>
-      {children}
+      <div className="min-w-0">{children}</div>
     </main>
   );
 }

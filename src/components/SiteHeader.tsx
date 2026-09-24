@@ -16,19 +16,19 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b-[3px] border-gold bg-wood-dark">
-      <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-between gap-4 px-6 py-4">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo.url} alt="Gospel for Generation Church logo" className="h-11 w-11 rounded-full" />
-          <span className="display text-xl leading-tight text-parchment">{t("brand.name")}</span>
+      <div className="mx-auto grid w-full max-w-[1100px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-4 sm:px-6 md:flex md:flex-wrap md:justify-between">
+        <Link to="/" className="flex min-w-0 items-center gap-3">
+          <img src={logo.url} alt="Gospel for Generation Church logo" className="h-11 w-11 shrink-0 rounded-full" />
+          <span className="display min-w-0 text-lg leading-tight text-parchment sm:text-xl">{t("brand.name")}</span>
         </Link>
 
-        <nav className="order-3 flex w-full gap-1 overflow-x-auto md:order-none md:w-auto">
+        <nav className="order-3 col-span-2 grid w-full grid-cols-3 gap-1 md:order-none md:flex md:w-auto">
           {tabs.map((tab) => (
             <Link
               key={tab.to}
               to={tab.to}
               activeOptions={{ exact: tab.to === "/" }}
-              className="whitespace-nowrap border-b-2 border-transparent px-3 py-2.5 text-[0.95rem] text-parchment-2 transition-colors hover:text-parchment"
+              className="min-w-0 border-b-2 border-transparent px-1 py-2 text-center text-sm text-parchment-2 transition-colors hover:text-parchment sm:px-3 sm:text-[0.95rem]"
               activeProps={{ className: "border-b-2 !border-amber !text-parchment" }}
             >
               {t(tab.key)}

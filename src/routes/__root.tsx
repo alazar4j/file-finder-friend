@@ -80,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Gospel for Generation Church" },
+      { name: "description", content: "Gospel for Generation Church in Addis Ababa, Ethiopia." },
+      { name: "author", content: "Gospel for Generation Church" },
+      { property: "og:title", content: "Gospel for Generation Church" },
+      { property: "og:description", content: "A church family gathering in Addis Ababa, Ethiopia." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
@@ -129,9 +129,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
-        <div className="flex min-h-screen flex-col bg-background">
+        <div className="flex min-h-screen min-w-0 flex-col overflow-x-clip bg-background">
           <SiteHeader />
-          <main className="flex-1">
+          <main className="min-w-0 flex-1">
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
             <Outlet />
           </main>
