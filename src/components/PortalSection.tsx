@@ -1,25 +1,10 @@
 import { useEffect, useState } from "react";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageSection, Card } from "@/components/Section";
 import { supabase } from "@/integrations/supabase/client";
 import { useSession } from "@/hooks/useSession";
 import { useLang } from "@/lib/i18n";
-
-export const Route = createFileRoute("/portal")({
-  head: () => ({
-    meta: [
-      { title: "Member Portal — Gospel for Generation Church" },
-      {
-        name: "description",
-        content: "Members: review your giving history, keep your household details current and submit prayer requests.",
-      },
-      { property: "og:title", content: "Member Portal — Gospel for Generation Church" },
-      { property: "og:description", content: "Giving history, household details and prayer requests for members." },
-    ],
-  }),
-  component: Portal,
-});
 
 export function PortalSection({ embedded = false }: { embedded?: boolean }) {
   const { t } = useLang();
@@ -227,8 +212,4 @@ export function PortalSection({ embedded = false }: { embedded?: boolean }) {
       </div>
     </PageSection>
   );
-}
-
-function Portal() {
-  return <PortalSection />;
 }

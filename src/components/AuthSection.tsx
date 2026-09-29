@@ -1,25 +1,10 @@
 import { useEffect, useState } from "react";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { PageSection } from "@/components/Section";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { useSession } from "@/hooks/useSession";
 import { useLang } from "@/lib/i18n";
-
-export const Route = createFileRoute("/auth")({
-  head: () => ({
-    meta: [
-      { title: "Member Sign In — Gospel for Generation Church" },
-      {
-        name: "description",
-        content: "Sign in or create a member account to view your giving history, household details and prayer requests.",
-      },
-      { property: "og:title", content: "Member Sign In — Gospel for Generation Church" },
-      { property: "og:description", content: "Access the member portal of Gospel for Generation Church." },
-    ],
-  }),
-  component: AuthPage,
-});
 
 export function AuthSection({ embedded = false }: { embedded?: boolean }) {
   const { t } = useLang();
@@ -147,8 +132,4 @@ export function AuthSection({ embedded = false }: { embedded?: boolean }) {
       </form>
     </PageSection>
   );
-}
-
-function AuthPage() {
-  return <AuthSection />;
 }

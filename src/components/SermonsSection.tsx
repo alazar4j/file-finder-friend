@@ -1,24 +1,8 @@
 import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { PageSection } from "@/components/Section";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
-
-export const Route = createFileRoute("/sermons")({
-  head: () => ({
-    meta: [
-      { title: "Sermons — Gospel for Generation Church" },
-      {
-        name: "description",
-        content: "Listen again to recent messages from Pastor James Okafor and our teaching team, in English and Amharic.",
-      },
-      { property: "og:title", content: "Sermons — Gospel for Generation Church" },
-      { property: "og:description", content: "Catch up on a message, or revisit one that stuck with you." },
-    ],
-  }),
-  component: Sermons,
-});
 
 export function SermonsSection() {
   const { t, pick } = useLang();
@@ -75,8 +59,4 @@ export function SermonsSection() {
       </div>
     </PageSection>
   );
-}
-
-function Sermons() {
-  return <SermonsSection />;
 }

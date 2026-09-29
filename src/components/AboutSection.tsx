@@ -1,22 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageSection } from "@/components/Section";
 import { useLang } from "@/lib/i18n";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — Gospel for Generation Church" },
-      {
-        name: "description",
-        content:
-          "Who we are, what we believe, and who leads Gospel for Generation Church — an evangelical, Bible-teaching congregation in Addis Ababa.",
-      },
-      { property: "og:title", content: "About Gospel for Generation Church" },
-      { property: "og:description", content: "Our story, our convictions and our leadership team." },
-    ],
-  }),
-  component: About,
-});
 
 export function AboutSection() {
   const { t } = useLang();
@@ -37,8 +20,4 @@ export function AboutSection() {
       </div>
     </PageSection>
   );
-}
-
-function About() {
-  return <AboutSection />;
 }

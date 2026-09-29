@@ -1,26 +1,10 @@
 import { useState } from "react";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { PageSection, Card } from "@/components/Section";
 import { supabase } from "@/integrations/supabase/client";
 import { useSession } from "@/hooks/useSession";
 import { useLang } from "@/lib/i18n";
-
-export const Route = createFileRoute("/give")({
-  head: () => ({
-    meta: [
-      { title: "Give — Gospel for Generation Church" },
-      {
-        name: "description",
-        content:
-          "Support the ministries, missions partners and building of Gospel for Generation Church. Record a gift to the general, missions, building or benevolence fund.",
-      },
-      { property: "og:title", content: "Give — Gospel for Generation Church" },
-      { property: "og:description", content: "Thank you for your generosity toward our ministries and missions." },
-    ],
-  }),
-  component: Give,
-});
 
 const funds = [
   { id: "general", key: "give.fund.general" },
@@ -148,8 +132,4 @@ export function GiveSection() {
       </div>
     </PageSection>
   );
-}
-
-function Give() {
-  return <GiveSection />;
 }

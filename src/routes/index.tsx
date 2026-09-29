@@ -5,12 +5,12 @@ import { HomeHero } from "@/components/HomeHero";
 import { Card } from "@/components/Section";
 import { useLang } from "@/lib/i18n";
 import { useSession } from "@/hooks/useSession";
-import { AboutSection } from "./about";
-import { EventsSection } from "./events";
-import { SermonsSection } from "./sermons";
-import { GiveSection } from "./give";
-import { AuthSection } from "./auth";
-import { PortalSection } from "./portal";
+import { AboutSection } from "@/components/AboutSection";
+import { EventsSection } from "@/components/EventsSection";
+import { SermonsSection } from "@/components/SermonsSection";
+import { GiveSection } from "@/components/GiveSection";
+import { AuthSection } from "@/components/AuthSection";
+import { PortalSection } from "@/components/PortalSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({

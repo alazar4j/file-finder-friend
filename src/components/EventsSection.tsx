@@ -1,23 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { PageSection } from "@/components/Section";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
-
-export const Route = createFileRoute("/events")({
-  head: () => ({
-    meta: [
-      { title: "Upcoming Events — Gospel for Generation Church" },
-      {
-        name: "description",
-        content: "Potlucks, youth nights, baptism Sundays and missions gatherings happening at our church this season.",
-      },
-      { property: "og:title", content: "Upcoming Events at Gospel for Generation Church" },
-      { property: "og:description", content: "Everything happening across the church family this season." },
-    ],
-  }),
-  component: Events,
-});
 
 export function EventsSection() {
   const { t, pick } = useLang();
@@ -51,8 +35,4 @@ export function EventsSection() {
       </div>
     </PageSection>
   );
-}
-
-function Events() {
-  return <EventsSection />;
 }
