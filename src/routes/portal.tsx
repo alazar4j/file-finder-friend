@@ -21,15 +21,15 @@ export const Route = createFileRoute("/portal")({
   component: Portal,
 });
 
-function Portal() {
+export function PortalSection({ embedded = false }: { embedded?: boolean }) {
   const { t } = useLang();
   const navigate = useNavigate();
   const { user, loading } = useSession();
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    if (!loading && !user) void navigate({ to: "/auth" });
-  }, [loading, user, navigate]);
+    if (!embedded && !loading && !user) void navigate({ to: "/auth" });
+  }, [embedded, loading, user, navigate]);
 
   const profile = useQuery({
     queryKey: ["profile", user?.id],
@@ -82,7 +82,7 @@ function Portal() {
   }, [profile.data]);
 
   if (loading || !user) {
-    return <PageSection title={t("portal.h")}>{t("common.loading")}</PageSection>;
+    return <PageSection id={embedded ? "members" : undefined} title={t("portal.h")}>{t("common.loading")}</PageSection>;
   }
 
   const total = (donations.data ?? []).reduce((sum, d) => sum + Number(d.amount), 0);
@@ -114,7 +114,7 @@ function Portal() {
   }
 
   return (
-    <PageSection title={t("portal.h")} lede={t("portal.p")}>
+    <PageSection id={embedded ? "members" : undefined} title={t("portal.h")} lede={t("portal.p")}>
       <p className="mb-6">
         {t("portal.welcome")} <strong>{form.full_name || user.email}</strong>
       </p>
@@ -227,4 +227,8 @@ function Portal() {
       </div>
     </PageSection>
   );
+}
+
+function Portal() {
+  return <PortalSection />;
 }

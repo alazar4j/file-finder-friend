@@ -4,6 +4,13 @@ import { HomeGive } from "@/components/HomeGive";
 import { HomeHero } from "@/components/HomeHero";
 import { Card } from "@/components/Section";
 import { useLang } from "@/lib/i18n";
+import { useSession } from "@/hooks/useSession";
+import { AboutSection } from "./about";
+import { EventsSection } from "./events";
+import { SermonsSection } from "./sermons";
+import { GiveSection } from "./give";
+import { AuthSection } from "./auth";
+import { PortalSection } from "./portal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,12 +35,13 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const { t } = useLang();
+  const { user } = useSession();
 
   return (
     <>
       <HomeHero />
 
-      <main className="mx-auto w-full max-w-[1100px] min-w-0 px-4 py-14 sm:px-6">
+      <section id="services" className="mx-auto w-full max-w-[1100px] min-w-0 scroll-mt-28 overflow-x-clip px-4 py-14 sm:px-6">
         <div className="grid min-w-0 gap-10 md:grid-cols-2">
           <div className="min-w-0">
             <h2 className="text-3xl">{t("home.welcome.h")}</h2>
@@ -74,9 +82,14 @@ function Home() {
             {t("home.verse.ref")}
           </cite>
         </blockquote>
-      </main>
+      </section>
+      <AboutSection />
+      <EventsSection />
+      <SermonsSection />
       <HomeGive />
+      <GiveSection />
       <ContactLocation />
+      {user ? <PortalSection embedded /> : <AuthSection embedded />}
     </>
   );
 }

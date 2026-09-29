@@ -10,7 +10,7 @@ export function HomeHero() {
   const { t } = useLang();
 
   return (
-    <section className="relative isolate flex min-h-[680px] items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-28 md:min-h-[760px] md:items-center md:py-24">
+    <section id="top" className="relative isolate flex min-h-[680px] scroll-mt-28 items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-28 md:min-h-[760px] md:items-center md:py-24">
       <img
         src={hero.url}
         alt="Stained glass inside Gospel for Generation Church"

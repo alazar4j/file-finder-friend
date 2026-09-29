@@ -21,7 +21,7 @@ export const Route = createFileRoute("/auth")({
   component: AuthPage,
 });
 
-function AuthPage() {
+export function AuthSection({ embedded = false }: { embedded?: boolean }) {
   const { t } = useLang();
   const navigate = useNavigate();
   const { user } = useSession();
@@ -33,8 +33,8 @@ function AuthPage() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    if (user) void navigate({ to: "/portal" });
-  }, [user, navigate]);
+    if (user && !embedded) void navigate({ to: "/portal" });
+  }, [user, embedded, navigate]);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -53,7 +53,7 @@ function AuthPage() {
       setError(res.error.message);
       return;
     }
-    void navigate({ to: "/portal" });
+    void navigate({ to: embedded ? "/" : "/portal", hash: embedded ? "members" : undefined });
   }
 
   async function google() {
@@ -64,11 +64,11 @@ function AuthPage() {
       return;
     }
     if (result.redirected) return;
-    void navigate({ to: "/portal" });
+    void navigate({ to: embedded ? "/" : "/portal", hash: embedded ? "members" : undefined });
   }
 
   return (
-    <PageSection title={t("auth.h")} lede={t("auth.p")}>
+    <PageSection id={embedded ? "members" : undefined} title={t("auth.h")} lede={t("auth.p")}>
       <form onSubmit={submit} className="max-w-md border border-border bg-card p-6 shadow-soft">
         {mode === "signup" ? (
           <>
@@ -139,4 +139,8 @@ function AuthPage() {
       </form>
     </PageSection>
   );
+}
+
+function AuthPage() {
+  return <AuthSection />;
 }
