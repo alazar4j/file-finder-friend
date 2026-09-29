@@ -29,7 +29,7 @@ const funds = [
   { id: "benevolence", key: "give.fund.benevolence" },
 ];
 
-function Give() {
+export function GiveSection() {
   const { t } = useLang();
   const { user, loading } = useSession();
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ function Give() {
   }
 
   return (
-    <PageSection title={t("give.h")} lede={t("give.p")}>
+    <PageSection id="donate" title={t("give.h")} lede={t("give.p")}>
       <div className="grid min-w-0 gap-10 md:grid-cols-2">
         <div className="min-w-0 border border-border bg-card p-5 shadow-soft sm:p-6">
           <h2 className="mb-4 text-2xl">{t("give.makeagift")}</h2>
@@ -141,11 +141,15 @@ function Give() {
           <Card accent="amber">
             <p className="text-sm text-muted-foreground">{t("give.processor")}</p>
           </Card>
-          <Link to="/portal" className="underline">
+          <Link to="/" hash="members" className="underline">
             {t("portal.history.h")}
           </Link>
         </div>
       </div>
     </PageSection>
   );
+}
+
+function Give() {
+  return <GiveSection />;
 }

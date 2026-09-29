@@ -18,10 +18,10 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-function About() {
+export function AboutSection() {
   const { t } = useLang();
   return (
-    <PageSection title={t("about.h")}>
+    <PageSection id="about" title={t("about.h")}>
       <div className="grid min-w-0 gap-10 md:grid-cols-2">
         <div className="min-w-0">
           <h2 className="mb-3 text-2xl">{t("about.who.h")}</h2>
@@ -37,4 +37,8 @@ function About() {
       </div>
     </PageSection>
   );
+}
+
+function About() {
+  return <AboutSection />;
 }

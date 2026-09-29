@@ -34,7 +34,7 @@ export function HomeHero() {
           <p className="mt-6 max-w-2xl text-base leading-8 text-parchment-2 md:text-lg">{t("hero.lede")}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 bg-amber px-6 text-accent-foreground hover:bg-amber/90">
-              <Link to="/about">
+              <Link to="/" hash="about">
                 {t("hero.cta1")}
                 <ArrowRight aria-hidden="true" />
               </Link>

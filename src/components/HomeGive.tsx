@@ -17,7 +17,7 @@ export function HomeGive() {
           <hr className="rule-gold my-4" />
           <p className="max-w-xl text-muted-foreground">{t("home.give.p")}</p>
           <Button asChild size="lg" className="mt-7 h-12 bg-wood-dark px-6 text-parchment hover:bg-wood">
-            <Link to="/give">
+            <Link to="/" hash="donate">
               {t("give.makeagift")}
               <ArrowRight aria-hidden="true" />
             </Link>

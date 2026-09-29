@@ -19,7 +19,7 @@ export const Route = createFileRoute("/events")({
   component: Events,
 });
 
-function Events() {
+export function EventsSection() {
   const { t, pick } = useLang();
   const { data, isLoading } = useQuery({
     queryKey: ["events"],
@@ -31,7 +31,7 @@ function Events() {
   });
 
   return (
-    <PageSection title={t("events.h")} lede={t("events.p")}>
+    <PageSection id="events" title={t("events.h")} lede={t("events.p")}>
       {isLoading ? <p className="text-muted-foreground">{t("common.loading")}</p> : null}
       {data?.length === 0 ? <p className="text-muted-foreground">{t("events.empty")}</p> : null}
       <div className="divide-y divide-border border-y border-border">
@@ -51,4 +51,8 @@ function Events() {
       </div>
     </PageSection>
   );
+}
+
+function Events() {
+  return <EventsSection />;
 }

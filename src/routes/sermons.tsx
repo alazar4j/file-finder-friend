@@ -20,7 +20,7 @@ export const Route = createFileRoute("/sermons")({
   component: Sermons,
 });
 
-function Sermons() {
+export function SermonsSection() {
   const { t, pick } = useLang();
   const [openId, setOpenId] = useState<string | null>(null);
   const { data, isLoading } = useQuery({
@@ -36,7 +36,7 @@ function Sermons() {
   });
 
   return (
-    <PageSection title={t("sermons.h")} lede={t("sermons.p")}>
+    <PageSection id="sermons" title={t("sermons.h")} lede={t("sermons.p")}>
       {isLoading ? <p className="text-muted-foreground">{t("common.loading")}</p> : null}
       <div className="border-y border-border">
         {data?.map((s) => (
@@ -75,4 +75,8 @@ function Sermons() {
       </div>
     </PageSection>
   );
+}
+
+function Sermons() {
+  return <SermonsSection />;
 }
