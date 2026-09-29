@@ -3,12 +3,14 @@ import logo from "@/assets/logo.png.asset.json";
 import { useLang } from "@/lib/i18n";
 
 const tabs = [
-  { to: "/", key: "nav.home" },
-  { to: "/about", key: "nav.about" },
-  { to: "/events", key: "nav.events" },
-  { to: "/sermons", key: "nav.sermons" },
-  { to: "/give", key: "nav.give" },
-  { to: "/portal", key: "nav.portal" },
+  { hash: "top", key: "nav.home" },
+  { hash: "services", key: "home.welcome.h" },
+  { hash: "about", key: "nav.about" },
+  { hash: "events", key: "nav.events" },
+  { hash: "sermons", key: "nav.sermons" },
+  { hash: "give", key: "nav.give" },
+  { hash: "contact", key: "home.contact.h" },
+  { hash: "members", key: "nav.portal" },
 ] as const;
 
 export function SiteHeader() {
@@ -22,12 +24,13 @@ export function SiteHeader() {
           <span className="display min-w-0 text-lg leading-tight text-parchment sm:text-xl">{t("brand.name")}</span>
         </Link>
 
-        <nav className="order-3 col-span-2 grid w-full grid-cols-3 gap-1 md:order-none md:flex md:w-auto">
+        <nav className="order-3 col-span-2 grid w-full grid-cols-4 gap-1 md:order-none md:flex md:w-auto">
           {tabs.map((tab) => (
             <Link
-              key={tab.to}
-              to={tab.to}
-              activeOptions={{ exact: tab.to === "/" }}
+              key={tab.hash}
+              to="/"
+              hash={tab.hash}
+              activeOptions={{ exact: true, includeHash: true }}
               className="min-w-0 border-b-2 border-transparent px-1 py-2 text-center text-sm text-parchment-2 transition-colors hover:text-parchment sm:px-3 sm:text-[0.95rem]"
               activeProps={{ className: "border-b-2 !border-amber !text-parchment" }}
             >

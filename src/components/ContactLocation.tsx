@@ -41,7 +41,7 @@ export function ContactLocation() {
       </div>
 
       {/* Map with overlay card */}
-      <div className="relative">
+      <div className="relative overflow-hidden">
         {embedUrl ? (
           <iframe
             title={t("location.mapLabel")}

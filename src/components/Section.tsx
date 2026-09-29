@@ -1,23 +1,25 @@
 import type { ReactNode } from "react";
 
 export function PageSection({
+  id,
   title,
   lede,
   children,
 }: {
+  id?: string;
   title: string;
   lede?: string;
   children: ReactNode;
 }) {
   return (
-    <main className="mx-auto w-full max-w-[1100px] min-w-0 px-4 py-12 sm:px-6">
+    <section id={id} className="mx-auto w-full max-w-[1100px] min-w-0 scroll-mt-28 overflow-x-clip px-4 py-12 sm:px-6">
       <div className="mb-8 min-w-0">
         <h1 className="text-4xl md:text-5xl">{title}</h1>
         <hr className="rule-gold my-4" />
         {lede ? <p className="max-w-2xl text-muted-foreground">{lede}</p> : null}
       </div>
       <div className="min-w-0">{children}</div>
-    </main>
+    </section>
   );
 }
 

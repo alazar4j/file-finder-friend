@@ -10,7 +10,7 @@ export function HomeHero() {
   const { t } = useLang();
 
   return (
-    <section className="relative isolate flex min-h-[680px] items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-28 md:min-h-[760px] md:items-center md:py-24">
+    <section id="top" className="relative isolate flex min-h-[680px] scroll-mt-28 items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-28 md:min-h-[760px] md:items-center md:py-24">
       <img
         src={hero.url}
         alt="Stained glass inside Gospel for Generation Church"
@@ -34,7 +34,7 @@ export function HomeHero() {
           <p className="mt-6 max-w-2xl text-base leading-8 text-parchment-2 md:text-lg">{t("hero.lede")}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 bg-amber px-6 text-accent-foreground hover:bg-amber/90">
-              <Link to="/about">
+              <Link to="/" hash="about">
                 {t("hero.cta1")}
                 <ArrowRight aria-hidden="true" />
               </Link>

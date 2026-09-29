@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- The public church experience is a single scrolling home route with anchored sections; legacy routes remain only as direct-link fallbacks.
