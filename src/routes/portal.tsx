@@ -82,7 +82,7 @@ export function PortalSection({ embedded = false }: { embedded?: boolean }) {
   }, [profile.data]);
 
   if (loading || !user) {
-    return <PageSection id={embedded ? "members" : undefined} title={t("portal.h")}>{t("common.loading")}</PageSection>;
+    return <PageSection {...(embedded ? { id: "members" } : {})} title={t("portal.h")}>{t("common.loading")}</PageSection>;
   }
 
   const total = (donations.data ?? []).reduce((sum, d) => sum + Number(d.amount), 0);
@@ -114,7 +114,7 @@ export function PortalSection({ embedded = false }: { embedded?: boolean }) {
   }
 
   return (
-    <PageSection id={embedded ? "members" : undefined} title={t("portal.h")} lede={t("portal.p")}>
+    <PageSection {...(embedded ? { id: "members" } : {})} title={t("portal.h")} lede={t("portal.p")}>
       <p className="mb-6">
         {t("portal.welcome")} <strong>{form.full_name || user.email}</strong>
       </p>

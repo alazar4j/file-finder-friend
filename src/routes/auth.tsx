@@ -53,7 +53,11 @@ export function AuthSection({ embedded = false }: { embedded?: boolean }) {
       setError(res.error.message);
       return;
     }
-    void navigate({ to: embedded ? "/" : "/portal", hash: embedded ? "members" : undefined });
+    if (embedded) {
+      void navigate({ to: "/", hash: "members" });
+    } else {
+      void navigate({ to: "/portal" });
+    }
   }
 
   async function google() {
@@ -64,11 +68,15 @@ export function AuthSection({ embedded = false }: { embedded?: boolean }) {
       return;
     }
     if (result.redirected) return;
-    void navigate({ to: embedded ? "/" : "/portal", hash: embedded ? "members" : undefined });
+    if (embedded) {
+      void navigate({ to: "/", hash: "members" });
+    } else {
+      void navigate({ to: "/portal" });
+    }
   }
 
   return (
-    <PageSection id={embedded ? "members" : undefined} title={t("auth.h")} lede={t("auth.p")}>
+    <PageSection {...(embedded ? { id: "members" } : {})} title={t("auth.h")} lede={t("auth.p")}>
       <form onSubmit={submit} className="max-w-md border border-border bg-card p-6 shadow-soft">
         {mode === "signup" ? (
           <>
