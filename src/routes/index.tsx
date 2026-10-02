@@ -41,8 +41,8 @@ function Home() {
     <>
       <HomeHero />
 
-      <section id="services" className="mx-auto w-full max-w-[1100px] min-w-0 scroll-mt-28 overflow-x-clip px-4 py-14 sm:px-6">
-        <div className="grid min-w-0 gap-10 md:grid-cols-2">
+      <section id="services" className="w-full min-w-0 scroll-mt-24 overflow-x-clip border-t border-border bg-secondary px-4 py-14 sm:px-6 md:py-20">
+        <div className="mx-auto grid w-full max-w-[1100px] min-w-0 gap-10 md:grid-cols-2">
           <div className="min-w-0">
             <h2 className="text-3xl">{t("home.welcome.h")}</h2>
             <hr className="rule-gold my-4" />
@@ -76,7 +76,7 @@ function Home() {
           </div>
         </div>
 
-        <blockquote className="mt-14 border-y border-border py-10 text-center">
+        <blockquote className="mx-auto mt-14 max-w-[1100px] border-y border-border py-10 text-center">
           <p className="display text-2xl italic md:text-3xl">{t("home.verse.text")}</p>
           <cite className="mt-3 block text-sm not-italic tracking-wide text-muted-foreground">
             {t("home.verse.ref")}

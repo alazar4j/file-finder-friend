@@ -1,6 +1,5 @@
 import { ArrowUpRight, Mail, MapPin, Phone, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png.asset.json";
 import { useLang } from "@/lib/i18n";
 
 const DIRECTIONS_URL = "https://maps.app.goo.gl/sDAiezFQyjTDzrf96";
@@ -30,7 +29,7 @@ export function ContactLocation() {
               {t("location.title")}
             </h2>
           </div>
-          <Button asChild className="h-11 shrink-0 bg-amber px-5 text-accent-foreground hover:bg-amber/90">
+          <Button asChild className="h-11 shrink-0 bg-accent px-5 text-accent-foreground hover:bg-accent/90">
             <a href={PHONE_HREF}>
               <Phone aria-hidden="true" />
               <span className="hidden sm:inline">{PHONE}</span>
@@ -89,7 +88,7 @@ export function ContactLocation() {
       <div className="px-4 py-14 sm:px-6 md:py-20">
         <div className="mx-auto max-w-[1100px]">
           <div className="flex min-w-0 items-center gap-3">
-            <img src={logo.url} alt="" className="h-12 w-12 shrink-0 rounded-full" />
+            <img src="/favicon.png" alt="" className="h-12 w-12 shrink-0 rounded-full ring-2 ring-gold/70" />
             <span className="display min-w-0 text-2xl uppercase tracking-[0.2em] text-parchment">{t("contact.wordmark")}</span>
           </div>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-parchment-2">{t("location.body")}</p>
@@ -116,7 +115,7 @@ export function ContactLocation() {
           <Button
             asChild
             size="lg"
-            className="mt-10 h-14 w-full bg-ruby text-base text-parchment hover:bg-ruby/90"
+            className="mt-10 h-14 w-full bg-accent text-base text-accent-foreground hover:bg-accent/90"
           >
             <a href={DIRECTIONS_URL} target="_blank" rel="noreferrer">
               {t("contact.openMaps")}

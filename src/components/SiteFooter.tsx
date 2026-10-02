@@ -4,18 +4,18 @@ export function SiteFooter() {
   const { t } = useLang();
 
   return (
-    <footer className="mt-16 bg-wood-dark px-4 pt-11 pb-7 text-parchment-2 sm:px-6">
+    <footer className="border-t border-gold/30 bg-primary px-4 pt-11 pb-7 text-primary-foreground sm:px-6">
       <div className="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-8 md:grid-cols-3">
         <div className="min-w-0 max-w-xs">
-          <h4 className="mb-2 text-xl !text-parchment">{t("brand.name")}</h4>
+          <h4 className="mb-2 text-xl">{t("brand.name")}</h4>
           <p className="text-sm">{t("home.address.p")}</p>
         </div>
         <div className="min-w-0 max-w-xs">
-          <h4 className="mb-2 text-xl !text-parchment">{t("footer.times.h")}</h4>
+          <h4 className="mb-2 text-xl">{t("footer.times.h")}</h4>
           <p className="text-sm">{t("footer.times.p")}</p>
         </div>
         <div className="min-w-0 max-w-xs">
-          <h4 className="mb-2 text-xl !text-parchment">{t("footer.connect.h")}</h4>
+          <h4 className="mb-2 text-xl">{t("footer.connect.h")}</h4>
           <p className="text-sm">{t("home.contact.p")}</p>
         </div>
       </div>
