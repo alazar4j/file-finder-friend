@@ -7,16 +7,16 @@ export function HomeGive() {
   const { t } = useLang();
 
   return (
-    <section id="give" className="bg-secondary px-4 py-14 sm:px-6 md:py-20" aria-labelledby="give-heading">
+    <section id="give" className="scroll-mt-24 border-t border-border bg-secondary px-4 py-14 sm:px-6 md:py-20" aria-labelledby="give-heading">
       <div className="mx-auto grid max-w-[1100px] gap-10 md:grid-cols-2 md:items-center">
         <div className="min-w-0">
-          <p className="text-sm font-semibold uppercase tracking-wide text-wood">{t("give.h")}</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-gold">{t("give.h")}</p>
           <h2 id="give-heading" className="mt-2 text-3xl md:text-4xl">
             {t("home.give.h")}
           </h2>
           <hr className="rule-gold my-4" />
           <p className="max-w-xl text-muted-foreground">{t("home.give.p")}</p>
-          <Button asChild size="lg" className="mt-7 h-12 bg-wood-dark px-6 text-parchment hover:bg-wood">
+          <Button asChild size="lg" className="mt-7 h-12 bg-accent px-6 text-accent-foreground hover:bg-accent/90">
             <Link to="/" hash="donate">
               {t("give.makeagift")}
               <ArrowRight aria-hidden="true" />
@@ -26,7 +26,7 @@ export function HomeGive() {
 
         <div className="card-ledger min-w-0 border-l-amber">
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-amber/20 text-wood-dark">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-amber/20 text-gold">
               <Landmark className="h-5 w-5" aria-hidden="true" />
             </span>
             <h3 className="text-xl">{t("home.give.bank.h")}</h3>

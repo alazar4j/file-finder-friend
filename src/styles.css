@@ -6,7 +6,7 @@
 
 /*
  * Gospel for Generation Church design system.
- * Parchment, wood, gold and stained-glass accents. All colors are oklch tokens.
+ * Deep navy, warm gold and high-contrast light text. All colors are oklch tokens.
  */
 
 @theme inline {
@@ -43,40 +43,40 @@
   --color-ruby: var(--ruby);
   --color-sapphire: var(--sapphire);
   --color-gold: var(--gold);
-  --shadow-soft: 0 1px 0 0 var(--border), 0 8px 24px -20px oklch(0.253 0.028 55 / 0.55);
+  --shadow-soft: 0 1px 0 0 var(--border), 0 12px 30px -18px oklch(0.08 0.035 255 / 0.8);
 }
 
 :root {
   --radius: 0.25rem;
 
-  --ink: oklch(0.253 0.028 55);
-  --parchment: oklch(0.945 0.028 90);
-  --parchment-2: oklch(0.906 0.041 89);
-  --wood: oklch(0.383 0.055 55);
-  --wood-dark: oklch(0.283 0.043 52);
-  --amber: oklch(0.671 0.128 72);
-  --ruby: oklch(0.412 0.135 15);
-  --sapphire: oklch(0.4 0.062 250);
-  --gold: oklch(0.655 0.113 82);
+  --ink: oklch(0.97 0.008 95);
+  --parchment: oklch(0.98 0.006 95);
+  --parchment-2: oklch(0.86 0.018 250);
+  --wood: oklch(0.54 0.1 252);
+  --wood-dark: oklch(0.2 0.065 258);
+  --amber: oklch(0.77 0.15 75);
+  --ruby: oklch(0.58 0.19 25);
+  --sapphire: oklch(0.35 0.12 255);
+  --gold: oklch(0.8 0.15 80);
 
-  --background: var(--parchment);
+  --background: oklch(0.18 0.055 258);
   --foreground: var(--ink);
-  --card: oklch(0.99 0.008 90);
+  --card: oklch(0.235 0.06 258);
   --card-foreground: var(--ink);
-  --popover: oklch(0.99 0.008 90);
+  --popover: oklch(0.22 0.06 258);
   --popover-foreground: var(--ink);
-  --primary: var(--wood-dark);
+  --primary: oklch(0.16 0.06 258);
   --primary-foreground: var(--parchment);
-  --secondary: var(--parchment-2);
-  --secondary-foreground: var(--wood-dark);
-  --muted: var(--parchment-2);
-  --muted-foreground: oklch(0.45 0.03 60);
+  --secondary: oklch(0.245 0.065 255);
+  --secondary-foreground: var(--parchment);
+  --muted: oklch(0.26 0.045 255);
+  --muted-foreground: oklch(0.8 0.025 250);
   --accent: var(--amber);
-  --accent-foreground: oklch(0.18 0.02 55);
+  --accent-foreground: oklch(0.16 0.05 258);
   --destructive: var(--ruby);
   --destructive-foreground: var(--parchment);
-  --border: oklch(0.253 0.028 55 / 0.15);
-  --input: oklch(0.253 0.028 55 / 0.2);
+  --border: oklch(0.8 0.15 80 / 0.22);
+  --input: oklch(0.8 0.15 80 / 0.34);
   --ring: var(--gold);
 }
 
@@ -118,7 +118,7 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 600;
-    color: var(--wood-dark);
+    color: var(--gold);
   }
 }
 
@@ -130,13 +130,13 @@
   width: 68px;
   height: 3px;
   border: 0;
-  background: linear-gradient(90deg, var(--gold), transparent);
+  background: linear-gradient(90deg, var(--gold), color-mix(in oklab, var(--gold) 20%, transparent));
 }
 
 @utility card-ledger {
   background-color: var(--color-card);
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--wood);
+  border-left: 3px solid var(--gold);
   padding: 1.25rem 1.5rem;
   box-shadow: var(--shadow-soft);
 }

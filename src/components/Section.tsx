@@ -12,13 +12,15 @@ export function PageSection({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto w-full max-w-[1100px] min-w-0 scroll-mt-28 overflow-x-clip px-4 py-12 sm:px-6">
-      <div className="mb-8 min-w-0">
-        <h1 className="text-4xl md:text-5xl">{title}</h1>
-        <hr className="rule-gold my-4" />
-        {lede ? <p className="max-w-2xl text-muted-foreground">{lede}</p> : null}
+    <section id={id} className="w-full min-w-0 scroll-mt-24 overflow-x-clip border-t border-border px-4 py-14 sm:px-6 md:py-20">
+      <div className="mx-auto w-full max-w-[1100px]">
+        <div className="mb-8 min-w-0">
+          <h1 className="text-4xl md:text-5xl">{title}</h1>
+          <hr className="rule-gold my-4" />
+          {lede ? <p className="max-w-2xl text-muted-foreground">{lede}</p> : null}
+        </div>
+        <div className="min-w-0">{children}</div>
       </div>
-      <div className="min-w-0">{children}</div>
     </section>
   );
 }

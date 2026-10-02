@@ -5,3 +5,6 @@
 - [x] Update the contact phone and email.
 - [x] Consolidate public pages into one continuously scrolling home page.
 - [x] Verify mobile and desktop scrolling and current build status.
+- [ ] Apply the navy-and-gold visual system across the single-page experience.
+- [ ] Add and verify responsive desktop and mobile navigation.
+- [ ] Recheck section order, vertical scrolling, readability, and live preview health.
