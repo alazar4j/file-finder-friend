@@ -29,7 +29,7 @@ export function ContactLocation() {
               {t("location.title")}
             </h2>
           </div>
-          <Button asChild className="h-11 shrink-0 bg-amber px-5 text-accent-foreground hover:bg-amber/90">
+          <Button asChild className="h-11 shrink-0 bg-accent px-5 text-accent-foreground hover:bg-accent/90">
             <a href={PHONE_HREF}>
               <Phone aria-hidden="true" />
               <span className="hidden sm:inline">{PHONE}</span>
@@ -115,7 +115,7 @@ export function ContactLocation() {
           <Button
             asChild
             size="lg"
-            className="mt-10 h-14 w-full bg-ruby text-base text-parchment hover:bg-ruby/90"
+            className="mt-10 h-14 w-full bg-accent text-base text-accent-foreground hover:bg-accent/90"
           >
             <a href={DIRECTIONS_URL} target="_blank" rel="noreferrer">
               {t("contact.openMaps")}
