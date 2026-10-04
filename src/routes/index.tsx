@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A Bible-teaching church family in Addis Ababa. Sunday worship at 9 and 11 AM, Wednesday Bible study, events, sermons and a member portal.",
+          "A Bible-teaching church family in Addis Ababa. Sunday worship 12:00–5:30, Wednesday service 10:00–2:00, Saturday youth 10:00–12:30 (Ethiopian Time) — events, sermons and a member portal.",
       },
       { property: "og:title", content: "Gospel for Generation Church — Addis Ababa" },
       {
@@ -32,6 +32,22 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
+
+const programParts = ["schedule.prayer", "schedule.worship", "schedule.word"] as const;
+
+function ProgramParts() {
+  const { t } = useLang();
+  return (
+    <ul className="mt-3 space-y-1.5">
+      {programParts.map((key) => (
+        <li key={key} className="flex min-w-0 items-center gap-2.5 text-sm">
+          <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+          <span className="font-semibold text-gold">{t(key)}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function Home() {
   const { t } = useLang();
@@ -50,10 +66,12 @@ function Home() {
             <Card>
               <h3 className="text-xl">{t("home.sunday.h")}</h3>
               <p>{t("home.sunday.p")}</p>
+              <ProgramParts />
             </Card>
             <Card>
               <h3 className="text-xl">{t("home.wed.h")}</h3>
               <p>{t("home.wed.p")}</p>
+              <ProgramParts />
             </Card>
             <Card>
               <h3 className="text-xl">{t("home.sat.h")}</h3>
