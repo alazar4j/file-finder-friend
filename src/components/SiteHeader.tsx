@@ -69,6 +69,8 @@ export function SiteHeader() {
         </Button>
       </div>
 
+    </header>
+
       {/* Mobile slide-over drawer */}
       <div
         className={`fixed inset-0 z-[60] lg:hidden ${menuOpen ? "" : "pointer-events-none"}`}
