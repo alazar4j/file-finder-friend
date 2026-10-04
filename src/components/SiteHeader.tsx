@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Globe, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/lib/i18n";
@@ -48,8 +48,9 @@ export function SiteHeader() {
           type="button"
           onClick={() => setLang(lang === "en" ? "am" : "en")}
           variant="outline"
-          className="h-10 shrink-0 border-gold/60 bg-transparent px-3 text-primary-foreground hover:bg-accent hover:text-accent-foreground"
+          className="h-9 shrink-0 gap-2 rounded-full border-gold/40 bg-gold/10 px-4 text-sm font-medium text-primary-foreground transition-colors hover:border-gold/70 hover:bg-gold/25 hover:text-gold"
         >
+          <Globe className="h-4 w-4 shrink-0" aria-hidden="true" />
           {lang === "en" ? "አማርኛ" : "English"}
         </Button>
 
