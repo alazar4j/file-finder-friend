@@ -68,28 +68,51 @@ export function SiteHeader() {
         </Button>
       </div>
 
+      {/* Mobile slide-over drawer */}
       <div
-        id="mobile-navigation"
-        className={`grid overflow-hidden border-t border-gold/20 bg-primary transition-[grid-template-rows,opacity] duration-300 lg:hidden ${
-          menuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
+        className={`fixed inset-0 z-[60] lg:hidden ${menuOpen ? "" : "pointer-events-none"}`}
+        aria-hidden={!menuOpen}
       >
-        <nav aria-label="Mobile navigation" className="min-h-0 overflow-hidden px-4 sm:px-6">
-          <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-1 py-3 sm:grid-cols-3">
+        <div
+          className={`absolute inset-0 bg-wood-dark/60 backdrop-blur-sm transition-opacity duration-300 ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={closeMenu}
+        />
+        <div
+          id="mobile-navigation"
+          className={`absolute inset-y-0 right-0 flex w-72 max-w-[85vw] flex-col border-l border-gold/30 bg-primary shadow-2xl transition-transform duration-300 ease-out ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-between border-b border-gold/20 px-5 py-4">
+            <span className="display text-base text-gold">{t("brand.name")}</span>
+            <Button
+              type="button"
+              size="icon"
+              variant="ghost"
+              aria-label="Close navigation menu"
+              onClick={closeMenu}
+              className="h-11 w-11 shrink-0 rounded-full text-gold hover:bg-gold/15 hover:text-gold"
+            >
+              <X className="h-6 w-6" aria-hidden="true" />
+            </Button>
+          </div>
+          <nav aria-label="Mobile navigation" className="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-5">
             {tabs.map((tab) => (
               <Link
                 key={tab.hash}
                 to="/"
                 hash={tab.hash}
                 onClick={closeMenu}
-                className="min-w-0 border-l-2 border-transparent px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:border-gold hover:bg-secondary hover:text-primary-foreground"
-                activeProps={{ className: "!border-gold !bg-secondary !text-gold" }}
+                className="min-w-0 rounded-lg border-l-2 border-transparent px-4 py-3.5 text-base text-primary-foreground/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-gold"
+                activeProps={{ className: "!border-gold !bg-gold/15 !text-gold" }}
               >
                 {t(tab.key)}
               </Link>
             ))}
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
   );
