@@ -23,7 +23,7 @@ export function SiteHeader() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-gold/50 bg-primary/95 shadow-soft backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/50 bg-primary shadow-soft backdrop-blur-md">
       <div className="mx-auto grid w-full max-w-[1200px] grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 px-4 py-3 sm:px-6 lg:flex lg:gap-6">
         <Link to="/" hash="top" onClick={closeMenu} className="flex min-w-0 items-center gap-3 lg:mr-auto">
           <img src="/favicon.png" alt="Gospel for Generation Church logo" className="h-11 w-11 shrink-0 rounded-full ring-2 ring-gold/70" />

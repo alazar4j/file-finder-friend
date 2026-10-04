@@ -32,23 +32,26 @@ export const strings: Dict = {
   },
   "home.sunday.h": { en: "Sunday Worship", am: "የእሁድ አምልኮ" },
   "home.sunday.p": {
-    en: "12:00 to 5:30 (Ethiopian Time) — main sanctuary. Children's ministry runs during the service.",
-    am: "ከ12:00 እስከ 5:30 (በኢትዮጵያ ሰዓት) — በዋናው ቤተ መቅደስ። የሕፃናት አገልግሎት ይካሄዳል።",
+    en: "12:00 to 5:30 (Ethiopian Time). Children's ministry runs during the service.",
+    am: "ከ12:00 እስከ 5:30 (በኢትዮጵያ ሰዓት)። የሕፃናት አገልግሎት ይካሄዳል።",
   },
   "home.wed.h": { en: "Wednesday Prayer Service", am: "የረቡዕ የጸሎት አገልግሎት" },
   "home.wed.p": {
-    en: "10:00 to 2:00 (Ethiopian Time) — open to all ages, no registration needed.",
-    am: "ከ10:00 እስከ 2:00 (በኢትዮጵያ ሰዓት) — ለሁሉም ዕድሜ ክፍት፣ ምዝገባ አያስፈልግም።",
+    en: "10:00 to 2:00 (Ethiopian Time) — open to all ages.",
+    am: "ከ10:00 እስከ 2:00 (በኢትዮጵያ ሰዓት) — ለሁሉም ዕድሜ ክፍት።",
   },
   "home.sat.h": { en: "Saturday Youth Service", am: "የቅዳሜ የወጣቶች አገልግሎት" },
   "home.sat.p": {
     en: "10:00 to 12:30 (Ethiopian Time) — worship, teaching and community for youth.",
     am: "ከ10:00 እስከ 12:30 (በኢትዮጵያ ሰዓት) — ለወጣቶች አምልኮ፣ ትምህርትና ኅብረት።",
   },
+  "schedule.prayer": { en: "Prayer Time", am: "የጸሎት ጊዜ" },
+  "schedule.worship": { en: "Worship Time", am: "የአምልኮ ጊዜ" },
+  "schedule.word": { en: "Word Time", am: "የቃል ጊዜ" },
   "home.new.h": { en: "New Here?", am: "አዲስ ነዎት?" },
   "home.new.p": {
-    en: "Stop by the welcome table before service — someone will walk you to your seat and answer any questions.",
-    am: "ከአገልግሎት በፊት በአቀባበል ጠረጴዛ ያልፉ — አንድ ሰው ወደ መቀመጫዎ ይወስድዎታል፣ ጥያቄዎችንም ይመልስልዎታል።",
+    en: "Our friendly ushers will gladly guide you to your seat and assist you with any questions upon arrival.",
+    am: "ደግ አሻንጉሎቻችን ከደረሱ ጊዜ ጀምሮ ወደ መቀመጫዎ በደስታ ይመራዎታል፣ ማናቸውንም ጥያቄዎችም በፍቅር ይመልስልዎታል።",
   },
   "home.thissun.h": { en: "This Sunday", am: "በዚህ እሁድ" },
   "home.thissun.p": {

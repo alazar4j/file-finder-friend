@@ -10,7 +10,7 @@ export function HomeHero() {
   const { t } = useLang();
 
   return (
-    <section id="top" className="relative isolate flex min-h-[680px] scroll-mt-28 items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-28 md:min-h-[760px] md:items-center md:py-24">
+    <section id="top" className="relative isolate flex min-h-[680px] scroll-mt-28 items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-32 md:min-h-[760px] md:items-center md:pb-24 md:pt-32">
       <img
         src={hero.url}
         alt="Open Bible on a wooden table with a cross and misty mountains at sunset"
