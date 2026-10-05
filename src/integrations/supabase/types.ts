@@ -142,6 +142,8 @@ export type Database = {
       }
       sermons: {
         Row: {
+          audio_path: string | null
+          audio_url: string | null
           created_at: string
           date_am: string
           date_en: string
@@ -159,6 +161,8 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          audio_path?: string | null
+          audio_url?: string | null
           created_at?: string
           date_am: string
           date_en: string
@@ -176,6 +180,8 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          audio_path?: string | null
+          audio_url?: string | null
           created_at?: string
           date_am?: string
           date_en?: string
@@ -217,6 +223,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      can_post: { Args: { _user_id: string }; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -226,7 +233,7 @@ export type Database = {
       }
     }
     Enums: {
-      app_role: "admin" | "member"
+      app_role: "admin" | "member" | "poster"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -354,7 +361,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "member"],
+      app_role: ["admin", "member", "poster"],
     },
   },
 } as const
