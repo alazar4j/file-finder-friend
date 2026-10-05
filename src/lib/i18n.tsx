@@ -30,33 +30,62 @@ export const strings: Dict = {
     en: "Whatever brought you here today, we're glad you came. Here's what to expect this week.",
     am: "ዛሬ ምንም ያመጣዎት ነገር ቢሆን፣ በመምጣትዎ ደስ ብሎናል። በዚህ ሳምንት የሚጠብቅዎት ይህ ነው።",
   },
-  "home.sunday.h": { en: "Sunday Worship", am: "የእሁድ አምልኮ" },
-  "home.sunday.p": {
-    en: "12:00 to 5:30 (Ethiopian Time). Children's ministry runs during the service.",
-    am: "ከ12:00 እስከ 5:30 (በኢትዮጵያ ሰዓት)። የሕፃናት አገልግሎት ይካሄዳል።",
+  "schedule.weekly.h": { en: "Our Weekly Schedule", am: "የሳምንቱ መርሃ ግብር" },
+  "schedule.weekly.p": {
+    en: "Every gathering across the week — all times shown in Ethiopian Time.",
+    am: "በሳምንቱ ውስጥ የሚካሄዱ ሁሉም ስብሰባዎች — ሁሉም ሰዓታት በኢትዮጵያ ሰዓት።",
   },
-  "home.wed.h": { en: "Wednesday Prayer Service", am: "የረቡዕ የጸሎት አገልግሎት" },
-  "home.wed.p": {
-    en: "10:00 to 2:00 (Ethiopian Time) — open to all ages.",
-    am: "ከ10:00 እስከ 2:00 (በኢትዮጵያ ሰዓት) — ለሁሉም ዕድሜ ክፍት።",
+  "schedule.daily.h": { en: "Daily Morning Prayer", am: "የጠዋት ጸሎት" },
+  "schedule.daily.tag": { en: "Every day · Mon–Sun", am: "ሰኞ እስከ ሰኞ" },
+  "schedule.daily.p": {
+    en: "12:00 to 2:00 (Ethiopian Time) — prayer time.",
+    am: "ከማለዳው 12:00 እስከ 2:00 (በኢትዮጵያ ሰዓት) — የጸሎት ጊዜ።",
   },
-  "home.sat.h": { en: "Saturday Youth Service", am: "የቅዳሜ የወጣቶች አገልግሎት" },
-  "home.sat.p": {
-    en: "10:00 to 12:30 (Ethiopian Time) — worship, teaching and community for youth.",
-    am: "ከ10:00 እስከ 12:30 (በኢትዮጵያ ሰዓት) — ለወጣቶች አምልኮ፣ ትምህርትና ኅብረት።",
+  "schedule.wed.h": { en: "Midweek Service", am: "ረቡዕ አገልግሎት" },
+  "schedule.wed.tag": { en: "Wednesday", am: "ረቡዕ" },
+  "schedule.wed.p": {
+    en: "10:00 to 2:00 (Ethiopian Time) — prayer, worship and word.",
+    am: "ከ10:00 እስከ 2:00 (በኢትዮጵያ ሰዓት) — የጸሎት፣ የአምልኮ እና የቃል ጊዜ።",
   },
-  "schedule.prayer": { en: "Prayer Time", am: "የጸሎት ጊዜ" },
-  "schedule.worship": { en: "Worship Time", am: "የአምልኮ ጊዜ" },
-  "schedule.word": { en: "Word Time", am: "የቃል ጊዜ" },
+  "schedule.friam.h": { en: "Fasting Prayer", am: "የጾም ጸሎት" },
+  "schedule.friam.tag": { en: "Friday morning", am: "አርብ ጠዋት" },
+  "schedule.friam.p": {
+    en: "3:00 to 6:00 (Ethiopian Time) — fasting prayer time.",
+    am: "ከ3:00 እስከ 6:00 (በኢትዮጵያ ሰዓት) — የጾም ጸሎት ጊዜ።",
+  },
+  "schedule.fripm.h": { en: "General Prayer", am: "አጠቃላይ ጸሎት" },
+  "schedule.fripm.tag": { en: "Friday afternoon", am: "አርብ ከሰዓት" },
+  "schedule.fripm.p": {
+    en: "11:00 to 1:00 (Ethiopian Time) — prayer time prepared for all.",
+    am: "ከ11:00 እስከ 1:00 (በኢትዮጵያ ሰዓት) — ለሁሉም የተዘጋጀ የጸሎት ጊዜ።",
+  },
+  "schedule.satam.h": { en: "Children's Ministry", am: "የህጻናት አገልግሎት" },
+  "schedule.satam.tag": { en: "Saturday morning", am: "ቅዳሜ ጠዋት" },
+  "schedule.satam.p": {
+    en: "2:00 to 5:00 (Ethiopian Time) — a program for children.",
+    am: "ከ2:00 እስከ 5:00 (በኢትዮጵያ ሰዓት) — የህጻናት እና ልጆች ፕሮግራም።",
+  },
+  "schedule.satpm.h": { en: "Youth Ministry", am: "የወጣቶች አገልግሎት" },
+  "schedule.satpm.tag": { en: "Saturday afternoon", am: "ቅዳሜ ከሰዓት" },
+  "schedule.satpm.p": {
+    en: "10:00 to 12:30 (Ethiopian Time) — a youth program shaped by the \"Youth for Christ\" vision.",
+    am: "ከ10:00 እስከ 12:30 (በኢትዮጵያ ሰዓት) — \"ወጣት ለክርስቶስ\" ራዕይ የተዘጋጀ የወጣቶች ፕሮግራም።",
+  },
+  "schedule.sun.h": { en: "Main Worship Service", am: "የእሁድ ዋና አምልኮ" },
+  "schedule.sun.tag": { en: "Sunday", am: "እሁድ" },
+  "schedule.sun.p": {
+    en: "From 11:00 to 5:30 (Ethiopian Time) — prayer, worship and word, with children's ministry.",
+    am: "ከ11:00 ጀምሮ እስከ 5:30 (በኢትዮጵያ ሰዓት) — የጸሎት፣ የአምልኮ እና የቃል ጊዜ፣ እንዲሁም የህጻናት የሚመሩበት ጊዜ።",
+  },
   "home.new.h": { en: "New Here?", am: "አዲስ ነዎት?" },
   "home.new.p": {
     en: "Our friendly ushers will gladly guide you to your seat and assist you with any questions upon arrival.",
     am: "ደግ አሻንጉሎቻችን ከደረሱ ጊዜ ጀምሮ ወደ መቀመጫዎ በደስታ ይመራዎታል፣ ማናቸውንም ጥያቄዎችም በፍቅር ይመልስልዎታል።",
   },
-  "home.thissun.h": { en: "This Sunday", am: "በዚህ እሁድ" },
-  "home.thissun.p": {
-    en: '"Rooted, Not Shaken" — Pastor James Okafor continues the series on Colossians.',
-    am: '"ሥር የሰደደ፣ የማይናወጥ" — ፓስተር ጄምስ ኦካፎር በቆላስይስ ላይ ተከታታይ ትምህርቱን ይቀጥላል።',
+  "home.recent.h": { en: "Recent Teaching", am: "የቅርብ ጊዜ ትምህርት" },
+  "home.recent.p": {
+    en: '"Obedience" — Pastor Gutema\'s powerful teaching from our recent Wednesday service on walking in God\'s ways and growing spiritually.',
+    am: '"ስለመታዘዝ" — ፓስተር ጉተማ በቅርብ የረቡዕ አገልግሎታችን ላይ ስለ በእግዚአብሔር መንገድ መሄድና ስለ መንፈሳዊ እድገት ያስተማረው ኃይለኛ ትምህርት።',
   },
   "home.address.h": { en: "Address", am: "አድራሻ" },
   "home.address.p": { en: "Kotebe Kara, Yeka Sub-city, Addis Ababa, Ethiopia", am: "ቆተቤ ቃራ፣ ያሬክ ክፍለ ከተማ፣ አዲስ አበባ፣ ኢትዮጵያ" },
@@ -95,8 +124,8 @@ export const strings: Dict = {
   },
   "about.lead.h": { en: "Leadership", am: "አመራር" },
   "about.lead.p": {
-    en: "Pastor James Okafor leads our congregation, supported by elders, deacons, and volunteers serving across worship, children's and youth ministry, outreach, and pastoral care.",
-    am: "ፓስተር ጄምስ ኦካፎር ጉባኤያችንን ይመራል፤ በአምልኮ፣ በሕፃናትና ወጣቶች አገልግሎት፣ በተልእኮና በእረኝነት እንክብካቤ በሚያገለግሉ ሽማግሌዎች፣ ዲያቆናትና በጎ ፈቃደኞች ይደገፋል።",
+    en: "Pastor Gutema leads our congregation, supported by elders, deacons, and volunteers serving across worship, children's and youth ministry, outreach, and pastoral care.",
+    am: "ፓስተር ጉተማ ጉባኤያችንን ይመራል፤ በአምልኮ፣ በሕፃናትና ወጣቶች አገልግሎት፣ በተልእኮና በእረኝነት እንክብካቤ በሚያገለግሉ ሽማግሌዎች፣ ዲያቆናትና በጎ ፈቃደኞች ይደገፋል።",
   },
 
   "events.h": { en: "Upcoming events", am: "ቀጣይ ዝግጅቶች" },
@@ -187,8 +216,8 @@ export const strings: Dict = {
 
   "footer.times.h": { en: "Service Times", am: "የአገልግሎት ሰዓታት" },
   "footer.times.p": {
-    en: "Sunday — 12:00 to 5:30 · Wednesday Prayer — 10:00 to 2:00 · Saturday Youth — 10:00 to 12:30 (all times Ethiopian)",
-    am: "እሁድ — ከ12:00 እስከ 5:30 · የረቡዕ ጸሎት — ከ10:00 እስከ 2:00 · የቅዳሜ ወጣቶች — ከ10:00 እስከ 12:30 (ሁሉም በኢትዮጵያ ሰዓት)",
+    en: "Daily Morning Prayer (Mon–Sun) 12:00–2:00 · Wednesday Service 10:00–2:00 · Friday Fasting Prayer 3:00–6:00 & General Prayer 11:00–1:00 · Saturday Children 2:00–5:00 & Youth 10:00–12:30 · Sunday Worship 11:00–5:30 (all times Ethiopian)",
+    am: "የጠዋት ጸሎት (ሰኞ እስከ ሰኞ) 12:00–2:00 · ረቡዕ አገልግሎት 10:00–2:00 · አርብ የጾም ጸሎት 3:00–6:00 እና አጠቃላይ ጸሎት 11:00–1:00 · ቅዳሜ ህጻናት 2:00–5:00 እና ወጣቶች 10:00–12:30 · እሁድ አምልኮ 11:00–5:30 (ሁሉም በኢትዮጵያ ሰዓት)",
   },
   "footer.connect.h": { en: "Connect", am: "ይገናኙን" },
   "footer.copyright": {
