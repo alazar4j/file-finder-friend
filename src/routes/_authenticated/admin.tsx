@@ -149,7 +149,7 @@ function EventsAdmin() {
       ? await supabase.from("events").update(payload).eq("id", id)
       : await supabase.from("events").insert(payload);
     setSaving(false);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success(pick("Event saved", "ዝግጅቱ ተቀምጧል"));
     setEditing(null);
     void qc.invalidateQueries({ queryKey: ["events"] });
@@ -158,7 +158,7 @@ function EventsAdmin() {
   async function remove(e: EventRow) {
     if (!confirm(pick(`Delete "${e.title_en}"?`, `"${e.title_am}" ይሰረዝ?`))) return;
     const { error } = await supabase.from("events").delete().eq("id", e.id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success(pick("Event deleted", "ዝግጅቱ ተሰርዟል"));
     void qc.invalidateQueries({ queryKey: ["events"] });
   }
@@ -290,7 +290,7 @@ function SermonsAdmin() {
     if (!confirm(pick(`Delete "${s.title_en}"?`, `"${s.title_am}" ይሰረዝ?`))) return;
     if (s.audio_path) await supabase.storage.from("sermon-audio").remove([s.audio_path]);
     const { error } = await supabase.from("sermons").delete().eq("id", s.id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success(pick("Sermon deleted", "ስብከቱ ተሰርዟል"));
     void qc.invalidateQueries({ queryKey: ["sermons"] });
   }
@@ -393,7 +393,7 @@ function AccountsAdmin() {
   }
 
   async function onCreate() {
-    if (form.password.length < 8) return toast.error(pick("Password must be at least 8 characters.", "የይለፍ ቃል ቢያንስ 8 ፊደል።"));
+    if (form.password.length < 8) { toast.error(pick("Password must be at least 8 characters.", "የይለፍ ቃል ቢያንስ 8 ፊደል።")); return; }
     setBusy(true);
     try {
       await create({ data: form });
