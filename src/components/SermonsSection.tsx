@@ -37,11 +37,19 @@ export function SermonsSection() {
                 type="button"
                 aria-label={t("sermons.watch")}
                 onClick={() => setOpenId(openId === s.id ? null : s.id)}
-                className="h-11 w-11 shrink-0 rounded-full bg-wood-dark text-parchment transition-colors hover:bg-wood"
+                className="h-11 w-11 shrink-0 rounded-full bg-gold text-primary transition-opacity hover:opacity-90"
               >
                 ▶
               </button>
             </div>
+            {s.audio_path ? (
+              <div className="mb-4">
+                <AudioPlayer
+                  src={supabase.storage.from("sermon-audio").getPublicUrl(s.audio_path).data.publicUrl.replace("/object/public/", "/object/authenticated/")}
+                  label={pick(s.title_en, s.title_am)}
+                />
+              </div>
+            ) : null}
             {openId === s.id ? (
               <div className="mb-5 bg-secondary p-5">
                 <p>{pick(s.description_en, s.description_am)}</p>
