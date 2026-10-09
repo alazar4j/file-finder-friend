@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { AudioPlayer } from "@/components/AudioPlayer";
 import { PageSection } from "@/components/Section";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
@@ -15,7 +16,13 @@ export function SermonsSection() {
         .select("*")
         .order("preached_on", { ascending: false });
       if (error) throw error;
-      return data;
+      const paths = data.map((r) => r.audio_path).filter((x): x is string => !!x);
+      const urls: Record<string, string> = {};
+      if (paths.length) {
+        const { data: signed } = await supabase.storage.from("sermon-audio").createSignedUrls(paths, 60 * 60 * 6);
+        signed?.forEach((x) => { if (x.path && x.signedUrl) urls[x.path] = x.signedUrl; });
+      }
+      return data.map((r) => ({ ...r, audioSrc: r.audio_path ? urls[r.audio_path] ?? null : null }));
     },
   });
 
@@ -42,10 +49,10 @@ export function SermonsSection() {
                 ▶
               </button>
             </div>
-            {s.audio_path ? (
+            {s.audioSrc ? (
               <div className="mb-4">
                 <AudioPlayer
-                  src={supabase.storage.from("sermon-audio").getPublicUrl(s.audio_path).data.publicUrl.replace("/object/public/", "/object/authenticated/")}
+                  src={s.audioSrc}
                   label={pick(s.title_en, s.title_am)}
                 />
               </div>
