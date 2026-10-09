@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { AudioPlayer } from "@/components/AudioPlayer";
 import { PageSection } from "@/components/Section";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
@@ -15,7 +16,13 @@ export function SermonsSection() {
         .select("*")
         .order("preached_on", { ascending: false });
       if (error) throw error;
-      return data;
+      const paths = data.map((r) => r.audio_path).filter((x): x is string => !!x);
+      const urls: Record<string, string> = {};
+      if (paths.length) {
+        const { data: signed } = await supabase.storage.from("sermon-audio").createSignedUrls(paths, 60 * 60 * 6);
+        signed?.forEach((x) => { if (x.path && x.signedUrl) urls[x.path] = x.signedUrl; });
+      }
+      return data.map((r) => ({ ...r, audioSrc: r.audio_path ? urls[r.audio_path] ?? null : null }));
     },
   });
 
@@ -37,11 +44,19 @@ export function SermonsSection() {
                 type="button"
                 aria-label={t("sermons.watch")}
                 onClick={() => setOpenId(openId === s.id ? null : s.id)}
-                className="h-11 w-11 shrink-0 rounded-full bg-wood-dark text-parchment transition-colors hover:bg-wood"
+                className="h-11 w-11 shrink-0 rounded-full bg-gold text-primary transition-opacity hover:opacity-90"
               >
                 ▶
               </button>
             </div>
+            {s.audioSrc ? (
+              <div className="mb-4">
+                <AudioPlayer
+                  src={s.audioSrc}
+                  label={pick(s.title_en, s.title_am)}
+                />
+              </div>
+            ) : null}
             {openId === s.id ? (
               <div className="mb-5 bg-secondary p-5">
                 <p>{pick(s.description_en, s.description_am)}</p>

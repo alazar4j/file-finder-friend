@@ -3,6 +3,7 @@ import { Globe, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/lib/i18n";
+import { useRoles } from "@/hooks/useRoles";
 
 const tabs = [
   { hash: "top", key: "nav.home" },
@@ -18,6 +19,7 @@ const tabs = [
 export function SiteHeader() {
   const { lang, setLang, t } = useLang();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { canPost } = useRoles();
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -43,6 +45,11 @@ export function SiteHeader() {
               {t(tab.key)}
             </Link>
           ))}
+          {canPost ? (
+            <Link to="/admin" className="ml-2 rounded-full border border-gold/60 px-3 py-1.5 text-sm text-gold hover:bg-gold/15">
+              {lang === "en" ? "Admin" : "አስተዳዳሪ"}
+            </Link>
+          ) : null}
         </nav>
 
         <Button
@@ -114,6 +121,11 @@ export function SiteHeader() {
                 {t(tab.key)}
               </Link>
             ))}
+            {canPost ? (
+              <Link to="/admin" onClick={closeMenu} className="mt-2 rounded-lg border border-gold/60 px-4 py-3.5 text-base text-gold hover:bg-gold/15">
+                {lang === "en" ? "Admin Dashboard" : "የአስተዳዳሪ ገጽ"}
+              </Link>
+            ) : null}
           </nav>
         </div>
       </div>
