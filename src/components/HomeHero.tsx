@@ -14,7 +14,7 @@ export function HomeHero() {
       <img
         src={hero.url}
         alt="Gospel for Generation Church sanctuary with a glowing cross on stage and rows of chairs"
-        className="absolute inset-0 -z-20 h-full w-full bg-wood-dark object-contain object-top md:object-cover md:object-center"
+        className="absolute inset-0 -z-20 h-full w-full bg-wood-dark object-contain object-[50%_68px] md:object-cover md:object-center"
       />
       <div className="absolute inset-0 -z-10 bg-wood-dark/25 md:bg-wood-dark/40" aria-hidden="true" />
       <div
