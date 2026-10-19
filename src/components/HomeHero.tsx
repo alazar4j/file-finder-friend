@@ -14,14 +14,17 @@ export function HomeHero() {
       <img
         src={hero.url}
         alt="Gospel for Generation Church sanctuary with a glowing cross on stage and rows of chairs"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        className="absolute inset-0 -z-20 h-full w-full bg-wood-dark object-contain object-[50%_68px] md:object-cover md:object-center"
       />
-      <div className="absolute inset-0 -z-10 bg-wood-dark/40" aria-hidden="true" />
+      <div className="absolute inset-0 -z-10 bg-wood-dark/25 md:bg-wood-dark/40" aria-hidden="true" />
       <div
         className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-wood-dark via-wood-dark/80 to-transparent"
         aria-hidden="true"
       />
-      <div className="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-wood-dark/70 to-transparent" aria-hidden="true" />
+      <div
+        className="absolute inset-x-0 top-0 -z-10 hidden h-24 bg-gradient-to-b from-wood-dark/70 to-transparent md:block"
+        aria-hidden="true"
+      />
 
       <div className="mx-auto w-full max-w-[1100px]">
         <div className="max-w-3xl">
