@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
-import hero from "@/assets/hero-bible-cross.png.asset.json";
+import hero from "@/assets/sanctuary-hero.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/lib/i18n";
 
