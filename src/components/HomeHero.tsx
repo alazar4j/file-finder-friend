@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
-import hero from "@/assets/hero-bible-cross.png.asset.json";
+import hero from "@/assets/sanctuary-hero.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/lib/i18n";
 
@@ -13,11 +13,15 @@ export function HomeHero() {
     <section id="top" className="relative isolate flex min-h-[680px] scroll-mt-28 items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-32 md:min-h-[760px] md:items-center md:pb-24 md:pt-32">
       <img
         src={hero.url}
-        alt="Open Bible on a wooden table with a cross and misty mountains at sunset"
+        alt="Gospel for Generation Church sanctuary with a glowing cross on stage and rows of chairs"
         className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 -z-10 bg-wood-dark/70" aria-hidden="true" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-52 bg-gradient-to-t from-wood-dark to-transparent" aria-hidden="true" />
+      <div className="absolute inset-0 -z-10 bg-wood-dark/40" aria-hidden="true" />
+      <div
+        className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-wood-dark via-wood-dark/80 to-transparent"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-wood-dark/70 to-transparent" aria-hidden="true" />
 
       <div className="mx-auto w-full max-w-[1100px]">
         <div className="max-w-3xl">
