@@ -75,7 +75,7 @@ function Home() {
     <>
       <HomeHero />
 
-      <section id="services" className="w-full min-w-0 scroll-mt-24 overflow-x-clip border-t border-border bg-secondary px-4 py-14 sm:px-6 md:py-20">
+      <section id="services" className="w-full min-w-0 scroll-mt-24 overflow-x-clip bg-secondary px-4 py-14 sm:px-6 md:py-20">
         <div className="mx-auto w-full max-w-[1100px] min-w-0">
           <div className="mb-10 min-w-0 max-w-2xl">
             <h2 className="text-3xl">{t("home.welcome.h")}</h2>
