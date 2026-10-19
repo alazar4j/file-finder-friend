@@ -18,7 +18,7 @@ export function HomeHero() {
       />
       <div className="absolute inset-0 -z-10 bg-wood-dark/25 md:bg-wood-dark/40" aria-hidden="true" />
       <div
-        className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-wood-dark via-wood-dark/80 to-transparent"
+        className="absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-gradient-to-t from-secondary via-wood-dark/95 to-transparent"
         aria-hidden="true"
       />
       <div
