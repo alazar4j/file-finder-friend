@@ -10,15 +10,19 @@ export function HomeHero() {
   const { t } = useLang();
 
   return (
-    <section id="top" className="relative isolate flex min-h-[680px] scroll-mt-28 items-end overflow-hidden bg-wood-dark px-6 pb-16 pt-32 md:min-h-[760px] md:items-center md:pb-24 md:pt-32">
+    <section id="top" className="relative isolate flex min-h-[680px] scroll-mt-28 items-end overflow-hidden bg-secondary px-6 pb-16 pt-32 md:min-h-[760px] md:items-center md:pb-24 md:pt-32">
       <img
         src={hero.url}
         alt="Gospel for Generation Church sanctuary with a glowing cross on stage and rows of chairs"
-        className="absolute inset-0 -z-20 h-full w-full bg-wood-dark object-contain object-[50%_68px] md:object-cover md:object-center"
+        className="absolute inset-x-0 top-[68px] -z-20 h-auto w-full md:inset-0 md:top-0 md:h-full md:object-cover md:object-center"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
+        }}
       />
-      <div className="absolute inset-0 -z-10 bg-wood-dark/25 md:bg-wood-dark/40" aria-hidden="true" />
+      <div className="absolute inset-0 -z-10 bg-secondary/25 md:bg-secondary/40" aria-hidden="true" />
       <div
-        className="absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-gradient-to-t from-secondary via-wood-dark/95 to-transparent"
+        className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-secondary via-secondary/80 to-transparent"
         aria-hidden="true"
       />
       <div
